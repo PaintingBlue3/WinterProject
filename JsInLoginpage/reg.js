@@ -16,6 +16,8 @@ regbtn.onclick = () => {
     for (var value of formData.values()) {
         console.log(value);
     }
+    if (question.value == '')
+        alert("请填写密保问题!");
     fetch("http://121.41.120.238:8080/user/register", {
         method: 'POST',
         body: formData
@@ -23,9 +25,9 @@ regbtn.onclick = () => {
         .then(Response => Response.json())
         .then(res => {
             let a = res.info;
-            alert(a +'密码应为8到16位');
+            alert(a + '密码应为8到16位');
         })
-       
+
 }
 
 
