@@ -39,14 +39,81 @@ a:hover {
     color: white;
 }
 
-.a4 {
-    position: relative;
-    height: 200px;
-    width: 100px;
-    background-color: blueviolet;
-    display: none;
-}
-
 #loginOrRegist {
     display: block;
+}
+
+.ext{
+    position: relative;
+    background-color: white;
+    border: 1px solid rgb(202, 202, 202);
+    font-size: 13px;
+    height: 75px;
+    width: 80px;
+    float: right;
+    right: 20px;
+}
+.exts{
+    top: 10px;
+    position: relative;
+    padding: 5px;
+    margin: 0;
+    bottom: 10px;
+}
+#myhome:hover{
+    background-color: rgb(246,246,246);
+}
+#logout:hover{
+    background-color: rgb(246,246,246);
+}
+#myhome{
+    display: flex;
+    justify-content: center;
+}
+#logout{
+    display: flex;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: black;
+}
+.a2{
+    height: 120px;
+    background-color: rgb(240,243,245);
+   
+}
+.b3{
+    position: relative;
+    left: 40px;
+    top: 10px;
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between
+}
+#p1{
+    position: relative;
+    /* top: 20px; */
+    height: 35px;
+    /* left: 200px; */
+    display: block;
+}
+.c1{
+    position: relative;
+    display: block;
+    width: 450px;
+    height: 10px;
+    outline: none;
+    padding: 10px;
+    border: 0px;
+    border-radius: 2px;
+    border-bottom: 2px solid rgb(210,210,210); 
+}
+#search{
+   
 }

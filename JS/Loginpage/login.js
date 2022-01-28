@@ -31,11 +31,20 @@ async function loginclick() {
 
     const token = data.info
     ;
+    if(data.info == '账号或密码错误！')
+    alert('账号或密码错误！')
+    
     const aaa = await fetch("http://121.41.120.238:8080/user/check", {
         method: 'POST',
         headers: checktoken
     })
     const atext = await aaa.json();
     console.log(atext.info);
+
+    if(atext !='账号或密码错误！')
+    {
+        alert('登录成功')
+        self.location='homepage.html'
+    }
 }
 

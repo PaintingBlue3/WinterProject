@@ -38,6 +38,9 @@
 a:hover {
     color: white;
 }
+#whos:hover {
+    color: rgb(218,218,218);
+}
 .p1 {
     position: relative;
     left: 100px;
