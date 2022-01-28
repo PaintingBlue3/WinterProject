@@ -89,7 +89,7 @@ a:hover{
 .b3{
     position: relative;
     left: 40px;
-    top: 10px;
+    top: 20px;
     width: 700px;
     display: flex;
     flex-direction: row;
@@ -105,15 +105,28 @@ a:hover{
 }
 .c1{
     position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+#search{
+    position: relative;
     display: block;
     width: 450px;
     height: 10px;
     outline: none;
     padding: 10px;
     border: 0px;
-    border-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
     border-bottom: 2px solid rgb(210,210,210); 
 }
-#search{
-   
+#searchBt{
+    height: 32px;
+    width: 35px;
+    outline: none;
+    border: 0px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: rgb(139,149,158);
 }
