@@ -52,6 +52,7 @@ a:hover {
     width: 80px;
     float: right;
     right: 20px;
+    z-index: 1;
 }
 .exts{
     top: 10px;
@@ -88,9 +89,9 @@ a:hover{
 }
 .b3{
     position: relative;
-    left: 40px;
+    left: 250px;
     top: 20px;
-    width: 700px;
+    width: 670px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -129,4 +130,9 @@ a:hover{
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     background-color: rgb(139,149,158);
+}
+#p2{
+    position: relative;
+    height: 16px;
+    top: 1px;
 }
