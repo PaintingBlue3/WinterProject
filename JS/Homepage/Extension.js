@@ -1,7 +1,7 @@
 const extbt = document.getElementById('userHome')
 const ext = document.getElementById('ext')
-console.log(extbt);
-console.log(ext);
+// console.log(extbt);
+// console.log(ext);
 ext.style.display = 'none';
 let flag = true;
 extbt.addEventListener('click', () => {
