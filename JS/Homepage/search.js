@@ -3,12 +3,17 @@ const searchBt = document.getElementById('searchBt');
 let formdata = new FormData();
 formdata.append('name', '')
 
+
 searchBt.addEventListener('click', async () => {
-    formdata.set('name', search.value);
-    let sv = search.value;
     console.log(search.value)
-    if (search.value == null) {
+    if (search.value == '' || search.value === null) {
         formdata.set('name', '');
+        alert('?')
+        localStorage.setItem('sv', '');//加个token保存
+    }
+    else {
+        formdata.set('name', search.value);
+        localStorage.setItem('sv', search.value);//加个token保存搜索框内的内容
     }
     // for (var value of formdata.values()) {
     //     console.log(value);
@@ -19,6 +24,14 @@ searchBt.addEventListener('click', async () => {
     })
     const mfres = await mf.json();
     console.log(mfres);
-    self.location='search.html'
 
+    self.location = 'search.html'//跳转到搜索界面
+    // console.log(sv);
+    // alert(sv)
+    let sv = window.localStorage.getItem('sv');
+    ss.innerHTML = '搜索 ' + sv;
+    localStorage.setItem('sv', search.value);
 })
+let sv = window.localStorage.getItem('sv');
+// alert(sv);
+ss.innerHTML = '搜索 ' + sv;
