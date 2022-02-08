@@ -85,12 +85,15 @@ async function last() {
         const mfres = await mf.json();
         console.log(mfres.information.length);
 
+        const titles = document.querySelectorAll('.title')//获得标题div
         const mps = document.querySelectorAll('.mp');//获得封面div
 
-        //删除上次搜索出的封面
+        //删除上次搜索出的封面和标题
         for (let i = 0; i < 4; i++) {
             mps[i].innerHTML = '';
+            titles[i].innerHTML = '';
         }
+
 
         for (var flag = 0; flag < mfres.information.length; flag++) {
             // console.log(mfres.information[flag]);
@@ -119,7 +122,6 @@ async function last() {
             mps[flag].appendChild(cover);
 
             //改变标题
-            const titles = document.querySelectorAll('.title')
             console.log(titles);
             titles[flag].innerHTML = mfres.information[flag].name;
 
