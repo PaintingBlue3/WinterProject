@@ -1,11 +1,12 @@
-const search = document.getElementById("search");
-const searchBt = document.getElementById('searchBt');
-let formdata = new FormData();
-formdata.append('name', '')
-
-
+async function a() {
+    const search = document.getElementById("search");
+    const searchBt = document.getElementById('searchBt');
+    let formdata = new FormData();
+    formdata.append('name', '')
+}
+a();
 searchBt.addEventListener('click', async () => {
-    console.log(search.value)
+    console.log(search.value);
     if (search.value == '' || search.value === null) {
         formdata.set('name', '');
         alert('?')

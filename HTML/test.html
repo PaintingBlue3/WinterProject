@@ -14,14 +14,18 @@
     </div>
 </body>
 <script type="module">
-    let coverform = new FormData();
-    coverform.append('name', '');
-    const IMDBs = await fetch("http://121.41.120.238:8080/movie/find", {
-        method: 'POST',
-        body: coverform
-    })
-    const Is = await IMDBs.json();
-    console.log(IMDBs)
+    async function a(){
+        let formdata = new FormData();
+        formdata.append('name', '')
+        const mf = await fetch("http://121.41.120.238:8080/movie/find", {
+            method: 'POST',
+            body: formdata
+        })
+        const mfres = await mf.json();
+        console.log(mfres);
+    }
+    a();
+
 </script>
 
 </html>

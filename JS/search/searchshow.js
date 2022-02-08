@@ -1,66 +1,84 @@
 const ss = document.getElementById('searchshow')
 const search = document.getElementById("search");
 const searchBt = document.getElementById('searchBt');
-let formdata = new FormData();
-formdata.append('name', '')
 
 searchBt.addEventListener('click', async () => {
+
+    let formdata = new FormData();
+    formdata.append('name', '')
     console.log(search.value)
-    if (search.value == '' || search.value === null) {
-        formdata.set('name', '');
-        alert('你还没有在搜索框内输入内容')
-        localStorage.setItem('sv', '');//加个token保存
+    formdata.set('name', search.value);
+    localStorage.setItem('sv', search.value);//加个token保存搜索框内的内容
+
+
+    // for (var value of formdata.values()) {
+    //     console.log(value);
+    // }
+
+
+    //查电影
+    const mf = await fetch("http://121.41.120.238:8080/movie/find", {
+        method: 'POST',
+        body: formdata
+    })
+    const mfres = await mf.json();
+    console.log(mfres.information.length);
+
+    const mps = document.querySelectorAll('.mp');//获得封面div
+
+    //删除上次搜索出的封面
+    for (let i = 0; i < 4; i++) {
+        mps[i].innerHTML = '';
     }
-    else {
-        formdata.set('name', search.value);
-        localStorage.setItem('sv', search.value);//加个token保存搜索框内的内容
-        // for (var value of formdata.values()) {
-        //     console.log(value);
-        // }
 
-        //查电影
-        const mf = await fetch("http://121.41.120.238:8080/movie/find", {
-            method: 'POST',
-            body: formdata
-        })
-        const mfres = await mf.json();
-        console.log(mfres.IMDB);
-        console.log(mfres.alias)//电影标题
+    for (var flag = 0; flag < mfres.information.length; flag++) {
+        // console.log(mfres.information[flag]);
+        console.log(mfres.information[flag].name)//电影标题
+        console.log(mfres.information[flag].imdb)//电影tt码
 
-        //查封面
+
+        //获得封面
         let coverform = new FormData();
         coverform.append('IMDB', '');
         coverform.append('heading', 'view');
-        coverform.set('IMDB', mfres.IMDB);
+        coverform.set('IMDB', mfres.information[flag].imdb);
         const IMDBs = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
             method: 'POST',
             body: coverform
         })
-        const Is = await IMDBs.json();
-        console.log(Is.picture1);
-        console.log(Is);
+        const Isres = await IMDBs.json();
+        console.log(Isres.information[0].picture_1);//封面
 
-        let coverbox1 = document.getElementById('cb1');
-        let cover1 = document.createElement('img');
-        cover1.src = Is.picture1;
-        cover1.width = '120'
-        coverbox1.appendChild(cover1);
+        //放入封面
+        console.log(flag + '!')
+        let cover = document.createElement('img');
+        cover.src = Isres.information[0].picture_1;
+        cover.width = '120';
+        cover.className = 'wow'
+        mps[flag].appendChild(cover);
 
-        // self.location = 'search.html'//跳转到搜索界面
-        // console.log(sv);
-        // alert(sv)
+        //改变标题
+        const titles = document.querySelectorAll('.title')
+        console.log(titles);
+        titles[flag].innerHTML = mfres.information[flag].name;
 
-        //改变为搜索框内容
-        let sv = window.localStorage.getItem('sv');
-        ss.innerHTML = '搜索 ' + sv;
-        localStorage.setItem('sv', search.value);
-
-        //改变搜索电影标题
-        const t1 = document.getElementById('t1');
-        t1.innerHTML = mfres.alias;
-
+        titles[flag].addEventListener('click', async () => {
+            window.open("moviepage.html");
+        })
+        // titles[flag].innerHTML = '?';
 
     }
+
+    //改变搜索框内容
+    let sv = window.localStorage.getItem('sv');
+    ss.innerHTML = '搜索 ' + sv;
+    localStorage.setItem('sv', search.value);
+
+
+
+    // t1.innerHTML = mfres.name;
+    // t1.addEventListener
+    // }
 })
 
 
@@ -71,9 +89,4 @@ searchBt.addEventListener('click', async () => {
 // ss.innerHTML = '搜索 ' + sv;
 
 
-//显示封面
-// let coverbox1 = document.getElementById('cb1');
-// let cover1 = document.createElement('img');
-// cover1.src = "https://douban-example.oss-cn-shenzhen.aliyuncs.com/7AKOV48%60M%7BS%602N50C2W4H%7DM.jpg"
-// cover1.width = '120'
-// coverbox1.appendChild(cover1);
+
