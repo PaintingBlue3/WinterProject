@@ -136,3 +136,18 @@ a:hover{
     height: 16px;
     top: 1px;
 }
+.focus ul li{
+    list-style: none;
+    float: left;
+}
+.focus ul{
+    width: 1000px;
+    height: auto;
+}
+.focus{
+    top: 20px;
+    position: relative;
+    width: 270px;
+    left: 250px;
+    height: 400px;
+}
