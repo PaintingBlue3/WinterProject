@@ -66,9 +66,9 @@ async function last() {
         titles[a].addEventListener('click', async () => {
             // alert(tts)
             // alert(tts[0])
-            alert(a)
+            // alert(a)
             localStorage.setItem('imdb', tts[a])
-            // window.open("moviepage.html");
+            window.open("moviepage.html");
         })
     }
 
@@ -152,11 +152,9 @@ searchBt.addEventListener('click', async () => {
         console.log(Isres.information[0].picture_1);//封面
 
         //放入封面
-        console.log(flag + '!')
         let cover = document.createElement('img');
         cover.src = Isres.information[0].picture_1;
         cover.width = '120';
-        cover.className = 'wow'
         mps[flag].appendChild(cover);
 
         //改变标题

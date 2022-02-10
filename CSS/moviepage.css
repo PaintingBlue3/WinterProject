@@ -152,14 +152,26 @@ a:hover{
 
 .a4{
     position: relative;
-    height: 220px;
+    height: 210px;
     display: grid;
     left: 250px;
     grid-template-columns: 150px 500px;
 }
 .cover{
+    height: 210px;
     background-color: yellow;
 }
 .movietext{
-    background-color: aqua;
+    position: relative;
+    left: 15px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+}
+.movietext span{
+    color:rgb(102,102,102);
+    padding: 1px;
+}
+.movietext span span{
+    color:black
 }
