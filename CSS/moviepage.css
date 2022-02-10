@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+document, body{
+    height: 1000px;
+}
 .a1 {
     background-color: rgb(84, 86, 82);
     height: 27px;
@@ -152,14 +154,15 @@ a:hover{
 
 .a4{
     position: relative;
-    height: 210px;
+    height: auto;
+    width: 700px;
     display: grid;
     left: 250px;
     grid-template-columns: 150px 500px;
 }
 .cover{
-    height: 210px;
-    background-color: yellow;
+    height: auto;
+    /* background-color: yellow; */
 }
 .movietext{
     position: relative;
@@ -174,4 +177,9 @@ a:hover{
 }
 .movietext span span{
     color:black
+}
+.a5{
+    position: relative;
+    background-color: aqua;
+    height: 50px;
 }
