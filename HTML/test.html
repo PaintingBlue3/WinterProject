@@ -7,24 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    div {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+    }
+</style>
 
 <body>
-    <div>
-        <button id="a"></button>
+    <div class="a1">
+
     </div>
+    <button>here</button>
 </body>
-<script type="module">
-    async function a(){
-        let formdata = new FormData();
-        formdata.append('name', '')
-        const mf = await fetch("http://121.41.120.238:8080/movie/find", {
-            method: 'POST',
-            body: formdata
+<script src="/JS/functions.js"></script>
+<script>
+    const btn = document.querySelector('button');
+    const a = document.querySelector('.a1')
+    for (let i = 1; i < 5; i++) {
+        btn.addEventListener('click', () => {
+            console.log(a)
+
+            animate(a, i * 100)
+
+
         })
-        const mfres = await mf.json();
-        console.log(mfres);
     }
-    a();
+
+
 
 </script>
 

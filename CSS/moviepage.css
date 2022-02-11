@@ -2,9 +2,12 @@
     margin: 0px;
     padding: 0px;
 }
-document, body{
+
+document,
+body {
     height: 1000px;
 }
+
 .a1 {
     background-color: rgb(84, 86, 82);
     height: 27px;
@@ -46,7 +49,7 @@ a:hover {
     display: block;
 }
 
-.ext{
+.ext {
     position: relative;
     background-color: white;
     border: 1px solid rgb(202, 202, 202);
@@ -57,40 +60,48 @@ a:hover {
     right: 20px;
     z-index: 1;
 }
-.exts{
+
+.exts {
     top: 10px;
     position: relative;
     padding: 5px;
     margin: 0;
     bottom: 10px;
 }
-#myhome:hover{
-    background-color: rgb(246,246,246);
+
+#myhome:hover {
+    background-color: rgb(246, 246, 246);
 }
-#logout:hover{
-    background-color: rgb(246,246,246);
+
+#logout:hover {
+    background-color: rgb(246, 246, 246);
 }
-#myhome{
+
+#myhome {
     display: flex;
     justify-content: center;
 }
-#logout{
+
+#logout {
     display: flex;
     justify-content: center;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
-a:hover{
+
+a:hover {
     color: black;
 }
-.a2{
+
+.a2 {
     height: 120px;
-    background-color: rgb(240,243,245);
-   
+    background-color: rgb(240, 243, 245);
 }
-.b3{
+
+.b3 {
     position: relative;
     left: 250px;
     top: 20px;
@@ -98,22 +109,24 @@ a:hover{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content:space-between
+    justify-content: space-between
 }
-#p1{
+
+#p1 {
     position: relative;
     /* top: 20px; */
     height: 35px;
     /* left: 200px; */
     display: block;
 }
-.c1{
+
+.c1 {
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-    
 }
-#search{
+
+#search {
     position: relative;
     display: block;
     width: 450px;
@@ -123,24 +136,26 @@ a:hover{
     border: 0px;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
-    border-bottom: 2px solid rgb(210,210,210); 
+    border-bottom: 2px solid rgb(210, 210, 210);
 }
-#searchBt{
+
+#searchBt {
     height: 32px;
     width: 35px;
     outline: none;
     border: 0px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
-    background-color: rgb(139,149,158);
+    background-color: rgb(139, 149, 158);
 }
-#p2{
+
+#p2 {
     position: relative;
     height: 16px;
     top: 1px;
 }
 
-.a3{
+.a3 {
     width: 700px;
     position: relative;
     left: 250px;
@@ -152,7 +167,7 @@ a:hover{
     font-weight: 300px;
 }
 
-.a4{
+.a4 {
     position: relative;
     height: auto;
     width: 700px;
@@ -160,26 +175,70 @@ a:hover{
     left: 250px;
     grid-template-columns: 150px 500px;
 }
-.cover{
+
+.cover {
     height: auto;
     /* background-color: yellow; */
 }
-.movietext{
+
+.movietext {
     position: relative;
     left: 15px;
     /* background-color: aqua; */
     display: flex;
     flex-direction: column;
 }
-.movietext span{
-    color:rgb(102,102,102);
+
+.movietext span {
+    color: rgb(102, 102, 102);
     padding: 1px;
 }
-.movietext span span{
-    color:black
+
+.movietext span span {
+    color: black
 }
-.a5{
+
+.a5 {
     position: relative;
     background-color: aqua;
     height: 50px;
+    width: 400px;
+    left: 250px;
+}
+
+.a5 button {
+    float: left;
+    background-color: rgb(255, 234, 218);
+    padding: 3px;
+    width: 55px;
+    font-size: 13px;
+    outline: none;
+    border-radius: 3px;
+    border: 1.5px solid rgb(213, 188, 170);
+}
+
+#bbb {
+    position: relative;
+    left: 10px;
+}
+
+.brief {
+    position: relative;
+    left: 250px;
+    width: 700px;
+    height: 300px;
+    background-color: aquamarine;
+}
+
+.brief h6 {
+    font-size: 17px;
+    color: rgb(0, 119, 34);
+    font-weight: bold;
+    font-weight: 400;
+}
+
+.brief p {
+    position: relative;
+    top: 10px;
+    font-size: 13px;
 }
