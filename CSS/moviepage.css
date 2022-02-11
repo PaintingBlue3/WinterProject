@@ -204,6 +204,7 @@ a:hover {
     height: 50px;
     width: 400px;
     left: 250px;
+    top: 10px;
 }
 
 .a5 button {
@@ -226,8 +227,15 @@ a:hover {
     position: relative;
     left: 250px;
     width: 700px;
-    height: 300px;
+    height: auto;
     background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+}
+
+.brief div {
+    height: 10px;
+    width: 300px;
 }
 
 .brief h6 {
@@ -239,6 +247,34 @@ a:hover {
 
 .brief p {
     position: relative;
-    top: 10px;
+    /* top: 10px; */
     font-size: 13px;
+}
+
+.comment {
+    position: relative;
+    top: 40px;
+    left: 250px;
+    width: 700px;
+    height: auto;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+}
+
+.comment div {
+    height: 15px;
+    width: 300px;
+}
+
+.comment h6 {
+    font-size: 17px;
+    color: rgb(0, 119, 34);
+    font-weight: bold;
+    font-weight: 400;
+}
+
+.comment p {
+    font-size: 10px;
+    color: gray;
 }
