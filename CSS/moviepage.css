@@ -5,7 +5,7 @@
 
 document,
 body {
-    height: 1000px;
+    width: 100%;
 }
 
 .a1 {
@@ -224,11 +224,12 @@ a:hover {
 }
 
 .brief {
+    top: 10px;
     position: relative;
     left: 250px;
     width: 700px;
     height: auto;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
 }
@@ -263,7 +264,7 @@ a:hover {
 }
 
 .comment div {
-    height: 15px;
+    height: 5px;
     width: 300px;
 }
 
@@ -277,4 +278,33 @@ a:hover {
 .comment p {
     font-size: 10px;
     color: gray;
+}
+
+.ct {
+    position: relative;
+    left: 250px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: bisque; */
+    height: auto;
+    width: 700px;
+    padding: 5px;
+    padding-left: 0px;
+}
+
+.cb {
+    position: relative;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 700px;
+}
+
+.cb span {
+    color: rgb(51, 119, 170);
+}
+
+.cb div {
+    color: rgb(102, 102, 102);
 }
