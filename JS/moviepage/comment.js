@@ -14,7 +14,7 @@ const cmresInf = cmres.information[0];
 console.log(cmres.information.length);
 many.innerHTML = '(全部 ' + cmres.information.length + ' 条)'
 
-for (let i = 0; i < cmres.information.length; i++) {
+for (let i = cmres.information.length - 1; i >= 0; i--) {
     //创建盒子
     let cb = document.createElement('div');
     let line = document.createElement('hr');
@@ -28,16 +28,23 @@ for (let i = 0; i < cmres.information.length; i++) {
     comments.appendChild(line);
     comments.appendChild(cb);
     const un = document.createElement('span');
+    const un1 = document.createElement('span');
+    un1.id = 'no';
     const msg = document.createElement('div');
-    un.innerHTML = cmres.information[0].username;
-    msg.innerHTML = cmres.information[0].msg;
+    un1.innerHTML = '第' + i + '楼'
+    un.innerHTML = cmres.information[i].username;
+    msg.innerHTML = cmres.information[i].msg;
     cb.appendChild(un);
+    cb.appendChild(un1);
     cb.appendChild(msg);
     console.log(cb);
 
     //在盒子里写评论
     //在盒子里加点赞键
-    const tp = document.createEvent('img');
-    tp.src = 'images/moviepage/thup-before.png'
+    const tp = document.createElement('img');
+    tp.src = '/images/moviepage/tbup-before.png';
     cb.appendChild(tp)
+
+    // window.open('search.html')
+    // window.open("search.html", "newwindow", "height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no")
 }

@@ -19,9 +19,15 @@ const tts = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
 const ttres = await tts.json();
 title.innerHTML = ttres.information[0].name
 bt.innerHTML = ttres.information[0].name + '的剧情简介 · · · · · ·'
-bc.innerHTML = ttres.information[0].name + '的短评 · · · · · ·'
+bc.innerHTML = ttres.information[0].name + '的讨论区 · · · · · ·'
 movieTitle.innerHTML = ttres.information[0].name;
 
+ttform.append('heading', 'member');
+// const ms = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
+//         method: 'POST',
+//         body: ttform
+//     })
+// console.log(ms;)
 //改信息
 ms[3].innerHTML = ttres.information[0].type;
 ms[4].innerHTML = ttres.information[0].date;
