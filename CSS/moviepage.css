@@ -200,7 +200,7 @@ a:hover {
 
 .a5 {
     position: relative;
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 50px;
     width: 400px;
     left: 250px;
@@ -235,7 +235,7 @@ a:hover {
 }
 
 .brief div {
-    height: 10px;
+    height: 15px;
     width: 300px;
 }
 

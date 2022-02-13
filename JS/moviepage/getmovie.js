@@ -5,6 +5,7 @@ const ms = document.querySelectorAll('.mt');
 const bt = document.getElementById('bt');
 const btt = document.getElementById('btt');
 const bc = document.getElementById('bc');
+const movieTitle = document.getElementById('movieTitle');
 console.log(bt.innerHTML)
 
 
@@ -19,6 +20,7 @@ const ttres = await tts.json();
 title.innerHTML = ttres.information[0].name
 bt.innerHTML = ttres.information[0].name + '的剧情简介 · · · · · ·'
 bc.innerHTML = ttres.information[0].name + '的短评 · · · · · ·'
+movieTitle.innerHTML = ttres.information[0].name;
 
 //改信息
 ms[3].innerHTML = ttres.information[0].type;
