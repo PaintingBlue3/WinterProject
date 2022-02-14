@@ -58,7 +58,6 @@ console.log(flag1)
 
 
 //得到主演
-// console.log(memres.information[0].player + '?~!')
 let playerform = new FormData();
 playerform.append('IMDB', '');
 playerform.set('IMDB', memres.information[0].player)
@@ -67,13 +66,19 @@ const playerfs = await fetch('http://121.41.120.238:8080/member/showMember', {
     body: playerform
 })
 const plyres = await playerfs.json();
+// console.log(plyres.information)
 
-//添加plyaer盒子
+//添加演员数量的盒子
 const playerBox = document.getElementById('playerBox');
 let flag2 = 0;
 for (let i = 0; i < flag1; i++) {
     let players = document.createElement('span')
     players.id = 'membs';
+    players.addEventListener('click', async() => {
+        window.open('memberpage.html');
+        localStorage.setItem('member', plyres.information[i].IMDB) //加个token
+    })
+    players.name = 'ttms';
     players.innerHTML = plyres.information[i].Name;
     playerBox.appendChild(players);
     flag2++;
@@ -84,6 +89,8 @@ for (let i = 0; i < flag1; i++) {
     }
 }
 
+const turntomems = document.getElementsByName('ttms')
+
 //改信息
 ms[0].innerHTML = fmres.information[0].Name;
 ms[1].innerHTML = fmres.information[1].Name;
@@ -93,8 +100,15 @@ ms[5].innerHTML = ttres.information[0].long + '分钟';
 ms[6].innerHTML = ttres.information[0].alias;
 ms[7].innerHTML = ttres.information[0].imdb;
 
-
-//查封面
+ms[0].addEventListener('click', async() => {
+    window.open('memberpage.html');
+    localStorage.setItem('member', plyres.information[0].IMDB) //加个token
+})
+ms[1].addEventListener('click', async() => {
+        window.open('memberpage.html');
+        localStorage.setItem('member', plyres.information[1].IMDB) //加个token
+    })
+    //查封面
 let coverform = new FormData();
 coverform.append('heading', 'view');
 coverform.append('IMDB', ttres.information[0].imdb);
@@ -111,3 +125,6 @@ let pic = document.createElement('img');
 pic.src = coverres.information[0].picture_1;
 pic.width = '150'
 cb.appendChild(pic);
+
+// const ttmems = document.getElementsByName('ttms');
+// console.log(ttmems)
