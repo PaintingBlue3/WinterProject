@@ -197,3 +197,39 @@ a:hover {
 .membertext span span {
     color: black
 }
+
+.brief {
+    top: 10px;
+    position: relative;
+    left: 250px;
+    width: 700px;
+    height: auto;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+}
+
+.brief div {
+    height: auto;
+    width: 700px;
+    padding: 15px;
+    padding-left: 0px;
+    padding-bottom: 30px;
+}
+
+.brief h6 {
+    position: relative;
+    font-size: 17px;
+    color: rgb(0, 119, 34);
+    font-weight: bold;
+    font-weight: 400;
+}
+
+#bp {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around */
+}
