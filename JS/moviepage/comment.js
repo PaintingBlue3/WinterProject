@@ -10,24 +10,24 @@ const comment = await fetch('http://121.41.120.238:8080/message/msgList', {
     body: commentform
 })
 const cmres = await comment.json();
-console.log(cmres.information.length);
+// console.log(cmres.information.length);
 many.innerHTML = '(全部 ' + cmres.information.length + ' 条)'
-console.log();
+    // console.log();
 
 
 for (let i = cmres.information.length - 1; i >= 0; i--) {
-    console.log(cmres.information[i]);
+    // console.log(cmres.information[i]);
     if (cmres.information[i].type == '1') {
         //创建盒子
         let cb = document.createElement('div');
         let line = document.createElement('hr');
         line.SIZE = '1';
-        console.log(line);
+        // console.log(line);
         cb.className = 'cb';
         line.noshade = "noshade"
         line.color = "#dddddd"
         line.size = '1'
-        console.log(cb);
+            // console.log(cb);
         comments.appendChild(line);
         comments.appendChild(cb);
         const un = document.createElement('span');
@@ -40,7 +40,7 @@ for (let i = cmres.information.length - 1; i >= 0; i--) {
         cb.appendChild(un);
         cb.appendChild(un1);
         cb.appendChild(msg);
-        console.log(cb);
+        // console.log(cb);
 
         //在盒子里写评论
         //在盒子里加点赞键
