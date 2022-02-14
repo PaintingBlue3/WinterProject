@@ -321,3 +321,12 @@ a:hover {
     font-size: 15px;
     float: right;
 }
+
+#membs {
+    color: rgb(51, 119, 170);
+}
+
+#membs:hover {
+    color: white;
+    background-color: rgb(51, 119, 170);
+}

@@ -23,12 +23,28 @@ bc.innerHTML = ttres.information[0].name + '的讨论区 · · · · · ·'
 movieTitle.innerHTML = ttres.information[0].name;
 
 ttform.append('heading', 'member');
-// const ms = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
-//         method: 'POST',
-//         body: ttform
-//     })
-// console.log(ms;)
+const members = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
+    method: 'POST',
+    body: ttform
+})
+const memres = await members.json()
+console.log(memres);
+
+let fmform = new FormData();
+fmform.append('IMDB', '');
+fmform.set('IMDB', memres.information[0].director + '/' + memres.information[0].scriptwriter);
+const findmeb = await fetch('http://121.41.120.238:8080/member/showMember', {
+    method: 'POST',
+    body: fmform
+})
+const fmres = await findmeb.json();
+console.log(fmres.information[0])
+console.log(memres.information[0].scriptwriter)
+
+// fmform.set('IMDB', memres.information[0].scriptwriter);
+
 //改信息
+ms[0].innerHTML = fmres.information[0].Name;
 ms[3].innerHTML = ttres.information[0].type;
 ms[4].innerHTML = ttres.information[0].date;
 ms[5].innerHTML = ttres.information[0].long + '分钟';
