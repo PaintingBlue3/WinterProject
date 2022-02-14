@@ -45,6 +45,7 @@ console.log(memres.information[0].scriptwriter)
 
 //改信息
 ms[0].innerHTML = fmres.information[0].Name;
+ms[1].innerHTML = fmres.information[1].Name;
 ms[3].innerHTML = ttres.information[0].type;
 ms[4].innerHTML = ttres.information[0].date;
 ms[5].innerHTML = ttres.information[0].long + '分钟';
