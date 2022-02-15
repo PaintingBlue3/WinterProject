@@ -8,3 +8,7 @@ function animate(obj, target) {
         obj.style.left = obj.offsetLeft + step + 'px';
     }, 10)
 }
+
+function jumpwindow(width, height, id) {
+    const
+}

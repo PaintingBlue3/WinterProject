@@ -6,7 +6,7 @@ const bt = document.getElementById('bt');
 const btt = document.getElementById('btt');
 const bc = document.getElementById('bc');
 const movieTitle = document.getElementById('movieTitle');
-console.log(bt.innerHTML)
+// console.log(bt.innerHTML)
 
 
 //查电影名
@@ -30,7 +30,7 @@ const members = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
     body: ttform
 })
 const memres = await members.json()
-console.log(memres.information[0].player); //
+    // console.log(memres.information[0].player); 
 
 
 //得到导演和编剧
@@ -45,15 +45,15 @@ const fmres = await findmeb.json();
 
 //算一共有几个主演
 const pls = memres.information[0].player.split('')
-console.log(pls);
-console.log(pls.length);
+    // console.log(pls);
+    // console.log(pls.length);
 let flag1 = 1;
 for (let i = 0; i < pls.length; i++) {
     if (pls[i] == '/') {
         flag1++;
     }
 }
-console.log(flag1)
+// console.log(flag1)
 
 
 
@@ -118,7 +118,7 @@ const cover = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
     body: coverform
 })
 const coverres = await cover.json();
-console.log(coverres.information[0].picture_1); //封面
+// console.log(coverres.information[0].picture_1); //封面
 btt.innerHTML = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + coverres.information[0].brief;
 
 //插入封面
@@ -143,7 +143,7 @@ const pictures = await fetch('http://121.41.120.238:8080/movie/findByIMDB', {
     body: picform
 })
 const picres = await pictures.json();
-console.log(picres.information[0])
+// console.log(picres.information[0])
 
 const pic2 = document.createElement('img');
 pic2.src = picres.information[0].picture_2;

@@ -2,9 +2,12 @@
     margin: 0px;
     padding: 0px;
 }
-html,body{
+
+html,
+body {
     width: 100%;
 }
+
 .a1 {
     position: absolute;
     width: 100%;
@@ -48,8 +51,9 @@ a:hover {
     display: block;
 }
 
-.ext{
+.ext {
     position: relative;
+    top: 27px;
     background-color: white;
     border: 1px solid rgb(202, 202, 202);
     font-size: 13px;
@@ -59,40 +63,48 @@ a:hover {
     right: 20px;
     z-index: 1;
 }
-.exts{
+
+.exts {
     top: 10px;
     position: relative;
     padding: 5px;
     margin: 0;
     bottom: 10px;
 }
-#myhome:hover{
-    background-color: rgb(246,246,246);
+
+#myhome:hover {
+    background-color: rgb(246, 246, 246);
 }
-#logout:hover{
-    background-color: rgb(246,246,246);
+
+#logout:hover {
+    background-color: rgb(246, 246, 246);
 }
-#myhome{
+
+#myhome {
     display: flex;
     justify-content: center;
 }
-#logout{
+
+#logout {
     display: flex;
     justify-content: center;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
-a:hover{
+
+a:hover {
     color: black;
 }
-.a2{
+
+.a2 {
     height: 120px;
-    background-color: rgb(240,243,245);
-   
+    background-color: rgb(240, 243, 245);
 }
-.b3{
+
+.b3 {
     position: absolute;
     left: 250px;
     top: 40px;
@@ -100,22 +112,24 @@ a:hover{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content:space-between
+    justify-content: space-between
 }
-#p1{
+
+#p1 {
     position: relative;
     /* top: 20px; */
     height: 35px;
     /* left: 200px; */
     display: block;
 }
-.c1{
+
+.c1 {
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-    
 }
-#search{
+
+#search {
     position: relative;
     display: block;
     width: 450px;
@@ -125,23 +139,26 @@ a:hover{
     border: 0px;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
-    border-bottom: 2px solid rgb(210,210,210); 
+    border-bottom: 2px solid rgb(210, 210, 210);
 }
-#searchBt{
+
+#searchBt {
     height: 32px;
     width: 35px;
     outline: none;
     border: 0px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
-    background-color: rgb(139,149,158);
+    background-color: rgb(139, 149, 158);
 }
-#p2{
+
+#p2 {
     position: relative;
     height: 16px;
     top: 1px;
 }
-.a3{
+
+.a3 {
     width: 700px;
     position: relative;
     left: 250px;
@@ -150,33 +167,38 @@ a:hover{
     height: 100px;
 }
 
-.a4{
+.a4 {
     position: relative;
     left: 230px;
     width: 700px;
 }
-#searchshow{
+
+#searchshow {
     font-size: 30px;
     font-weight: bold;
     font-weight: 500px;
-    color:rgb(73,73,73)
+    color: rgb(73, 73, 73)
 }
-.mp{
+
+.mp {
     background-color: white;
     width: 120px;
     height: 170px;
 }
-.m1{
+
+.m1 {
     display: grid;
     grid-template-columns: 130px 600px;
     padding: 20px;
 }
-.title{
+
+.title {
     font-size: 17px;
-    color: rgb(51,119,170);
+    color: rgb(51, 119, 170);
     width: auto;
 }
-.title:hover{
-    color:white;
-    background-color: rgb(51,119,170);
+
+.title:hover {
+    color: white;
+    background-color: rgb(51, 119, 170);
 }
