@@ -15,6 +15,9 @@ const membersearch = await fetch('http://121.41.120.238:8080/member/showMember',
 const msres = await membersearch.json();
 console.log(msres.information[0]);
 
+const title = document.querySelector('#title');
+title.innerHTML = msres.information[0].Name;
+
 memname.innerHTML = msres.information[0].Name;
 if (msres.information[0].Male == '1')
     memspans[0].innerHTML = '男'

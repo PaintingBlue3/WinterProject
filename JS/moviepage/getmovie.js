@@ -102,11 +102,11 @@ ms[7].innerHTML = ttres.information[0].imdb;
 
 ms[0].addEventListener('click', async() => {
     window.open('memberpage.html');
-    localStorage.setItem('member', plyres.information[0].IMDB) //加个token
+    localStorage.setItem('member', fmres.information[0].IMDB) //加个token
 })
 ms[1].addEventListener('click', async() => {
         window.open('memberpage.html');
-        localStorage.setItem('member', plyres.information[1].IMDB) //加个token
+        localStorage.setItem('member', fmres.information[1].IMDB) //加个token
     })
     //查封面
 let coverform = new FormData();

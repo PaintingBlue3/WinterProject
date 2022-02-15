@@ -226,10 +226,11 @@ a:hover {
 }
 
 #bp {
+    align-items: center;
     height: auto;
     width: auto;
     padding: 10px;
-    /* display: flex;
+    display: flex;
     flex-direction: row;
-    justify-content: space-around */
+    justify-content: space-around;
 }
