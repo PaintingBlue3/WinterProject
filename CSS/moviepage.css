@@ -330,3 +330,32 @@ a:hover {
     color: white;
     background-color: rgb(51, 119, 170);
 }
+
+#pics {
+    padding: 10px;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#pt {
+    font-size: 17px;
+    color: rgb(0, 119, 34);
+    font-weight: bold;
+    font-weight: 400;
+}
+
+.pic {
+    top: 10px;
+    position: relative;
+    left: 250px;
+    width: 700px;
+    height: auto;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+}

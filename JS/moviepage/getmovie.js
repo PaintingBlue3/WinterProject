@@ -84,6 +84,7 @@ for (let i = 0; i < flag1; i++) {
     flag2++;
     if (flag2 < flag1) {
         let fenge = document.createElement('span');
+        fenge.style.color = 'rgb(51,119,170)'
         fenge.innerHTML = '/'
         playerBox.appendChild(fenge)
     }
@@ -128,3 +129,33 @@ cb.appendChild(pic);
 
 // const ttmems = document.getElementsByName('ttms');
 // console.log(ttmems)
+
+//剧照
+const pt = document.querySelector('#pt');
+pt.innerHTML = ttres.information[0].name + '的剧照 · · · · · ·';
+
+const pics = document.querySelector('#pics');
+let picform = new FormData();
+picform.append('IMDB', tt)
+picform.append('heading', 'view')
+const pictures = await fetch('http://121.41.120.238:8080/movie/findByIMDB', {
+    method: 'POST',
+    body: picform
+})
+const picres = await pictures.json();
+console.log(picres.information[0])
+
+const pic2 = document.createElement('img');
+pic2.src = picres.information[0].picture_2;
+pic2.width = '300';
+pics.appendChild(pic2);
+
+const pic3 = document.createElement('img');
+pic3.src = picres.information[0].picture_3;
+pic3.width = '300';
+pics.appendChild(pic3);
+
+// const pic4 = document.createElement('img');
+// pic4.src = picres.information[0].picture_4;
+// pic4.width = '300';
+// pics.appendChild(pic4);

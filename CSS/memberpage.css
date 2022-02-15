@@ -234,3 +234,14 @@ a:hover {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.pic {
+    top: 10px;
+    position: relative;
+    left: 250px;
+    width: 700px;
+    height: auto;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+}
