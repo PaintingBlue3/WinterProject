@@ -6,6 +6,9 @@ const bt = document.getElementById('bt');
 const btt = document.getElementById('btt');
 const bc = document.getElementById('bc');
 const movieTitle = document.getElementById('movieTitle');
+const mc = document.querySelector('#mc');
+const pn = document.querySelector('#pointnum')
+
 // console.log(bt.innerHTML)
 
 
@@ -19,6 +22,7 @@ const tts = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
 const ttres = await tts.json();
 title.innerHTML = ttres.information[0].name
 bt.innerHTML = ttres.information[0].name + '的剧情简介 · · · · · ·'
+mc.innerHTML = ttres.information[0].name + '的影评 · · · · · ·'
 bc.innerHTML = ttres.information[0].name + '的讨论区 · · · · · ·'
 movieTitle.innerHTML = ttres.information[0].name;
 
@@ -155,7 +159,18 @@ pic3.src = picres.information[0].picture_3;
 pic3.width = '300';
 pics.appendChild(pic3);
 
-// const pic4 = document.createElement('img');
-// pic4.src = picres.information[0].picture_4;
-// pic4.width = '300';
-// pics.appendChild(pic4);
+const pic4 = document.createElement('img');
+pic4.src = picres.information[0].picture_4;
+pic4.width = '300';
+pics.appendChild(pic4);
+
+let pointform = new FormData();
+pointform.append('IMDB', tt);
+pointform.append('heading', 'liker');
+const point = await fetch('http://121.41.120.238:8080/movie/findByIMDB', {
+    method: 'POST',
+    body: pointform
+})
+const pointres = await point.json();
+console.log(pointres.information[0])
+pn.innerHTML = pointres.information[0].score
