@@ -463,11 +463,12 @@ a:hover {
     left: 30%;
     top: 70%;
     background-color: rgb(253, 253, 253);
-    border: 2px solid rgb(32, 32, 32);
+    border: 1px solid rgb(41, 41, 41);
     border-radius: 8px;
     width: 500px;
-    height: 300px;
+    height: 220px;
     z-index: 10;
+    /* display: none; */
 }
 
 .head {
@@ -475,4 +476,68 @@ a:hover {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     background-color: rgb(235, 245, 234);
+}
+
+.bton {
+    position: relative;
+    float: inline-start;
+    top: 120px;
+    z-index: -2;
+    height: 50px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: rgb(233, 238, 242);
+}
+
+#x {
+    position: relative;
+    float: right;
+    top: 10px;
+    right: 20px;
+    color: gray;
+}
+
+#x:hover {
+    background-color: rgb(170, 54, 54);
+}
+
+#windtit {
+    position: relative;
+    left: 20px;
+    top: 15px;
+    color: rgb(0, 119, 34)
+}
+
+.mc {
+    position: relative;
+    padding: 3px;
+    top: 40px;
+    left: 50px;
+}
+
+.head input {
+    border-radius: 2px;
+    height: 20px;
+    width: 30px;
+    outline: none;
+    border: 1px solid rgb(54, 54, 54);
+}
+
+#text {
+    position: relative;
+    float: left;
+    left: 100px;
+    top: 17px;
+    width: 350px;
+    outline: none;
+    resize: none;
+}
+
+#send {
+    position: relative;
+    float: right;
+    width: 60px;
+    height: 25px;
+    top: 105px;
+    right: 50px;
 }
