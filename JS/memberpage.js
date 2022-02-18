@@ -61,3 +61,36 @@ const pic4 = document.createElement('img');
 pic4.src = mpres.information[0].Picture4;
 pic4.width = '200'
 mp.appendChild(pic4);
+
+const mms = document.getElementById('mm');
+
+let workform = new FormData();
+workform.append('MemberIMDB', msres.information[0].IMDB);
+const moviework = await fetch('http://121.41.120.238:8080/movie/findByMember', {
+    method: 'POST',
+    body: workform
+})
+const workres = await moviework.json();
+console.log(workres.info)
+
+
+let coverform = new FormData();
+coverform.append('heading', 'view');
+coverform.append('IMDB', 'tt11219254');
+const cover = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
+    method: 'POST',
+    body: coverform
+})
+const coverres = await cover.json();
+let pic = document.createElement('img');
+pic.src = coverres.information[0].picture_1;
+pic.className = 'mmp'
+pic.width = '150'
+mms.appendChild(pic);
+const mmps = document.querySelectorAll('.mmp');
+for (let i = 0; i < mmps.length; i++) {
+    mmps[i].addEventListener('click', async() => {
+        localStorage.setItem('imdb', workres.info) //代修bug
+        window.open('moviepage.html')
+    })
+}

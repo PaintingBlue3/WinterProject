@@ -78,11 +78,31 @@ a:hover {
 .me {
     position: relative;
     display: flex;
+    align-items: center;
+    width: 700px;
     left: 250px;
 }
 
 .intro {
     position: relative;
-    height: 30px;
+    left: 20px;
+    padding: 10px;
+    height: 70px;
+    width: 550px;
     background-color: rgb(237, 244, 237);
+}
+
+.tit {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    color: rgb(0, 119, 34);
+    font-weight: bold;
+    font-weight: 400;
+}
+
+.wantlook,
+.allook {
+    position: relative;
+    left: 250px;
 }
