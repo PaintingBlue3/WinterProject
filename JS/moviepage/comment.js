@@ -14,7 +14,7 @@ const comment = await fetch('http://121.41.120.238:8080/message/msgList', {
 const cmres = await comment.json();
 
 let long = 0;
-for (let i = cmres.information.length - 1; i >= 0; i--) {
+for (let i = 0; i < cmres.information.length; i++) {
     // console.log(cmres.information[i]);
     if (cmres.information[i].type == '1') {
         //创建盒子
@@ -34,7 +34,7 @@ for (let i = cmres.information.length - 1; i >= 0; i--) {
         const un1 = document.createElement('span');
         un1.id = 'no';
         const msg = document.createElement('div');
-        un1.innerHTML = '第' + i + '楼'
+        un1.innerHTML = '第' + long + '楼'
         un.innerHTML = cmres.information[i].username;
         msg.innerHTML = cmres.information[i].msg;
         cb.appendChild(un);

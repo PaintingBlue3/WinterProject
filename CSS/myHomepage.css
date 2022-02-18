@@ -69,8 +69,20 @@ a:hover {
 
 #icon {
     position: relative;
-    left: 250px;
+    /* left: 250px; */
     background-color: gray;
     width: 150px;
     height: 150px;
+}
+
+.me {
+    position: relative;
+    display: flex;
+    left: 250px;
+}
+
+.intro {
+    position: relative;
+    height: 30px;
+    background-color: rgb(237, 244, 237);
 }

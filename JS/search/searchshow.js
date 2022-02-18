@@ -182,7 +182,7 @@ searchBt.addEventListener('click', async() => {
             titles[a].addEventListener('click', async() => {
                 // alert(tts)
                 // alert(tts[0])
-                alert(a)
+                // alert(a)
                 localStorage.setItem('imdb', tts[a])
                 window.open("moviepage.html");
             })
