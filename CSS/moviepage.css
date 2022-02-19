@@ -413,6 +413,7 @@ a:hover {
 .psbox {
     position: relative;
     padding-top: 10px;
+    width: 700px;
     padding-bottom: 10px;
     left: 250px;
     align-items: center;

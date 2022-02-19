@@ -79,30 +79,101 @@ a:hover {
     position: relative;
     display: flex;
     align-items: center;
-    width: 700px;
+    width: 750px;
     left: 250px;
 }
 
 .intro {
     position: relative;
-    left: 20px;
+    left: 30px;
     padding: 10px;
     height: 70px;
-    width: 550px;
+    width: 580px;
     background-color: rgb(237, 244, 237);
 }
 
 .tit {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    position: relative;
+    padding: 1px;
+    /* padding-top: 30px; */
+    /* padding-bottom: 10px; */
     font-size: 17px;
     color: rgb(0, 119, 34);
     font-weight: bold;
     font-weight: 400;
 }
 
+.tit:hover {
+    background-color: rgb(242, 251, 242);
+}
+
+.number {
+    color: rgb(51, 119, 170);
+}
+
+.number:hover {
+    background-color: rgb(51, 119, 170);
+    color: white;
+}
+
 .wantlook,
 .allook {
     position: relative;
+    width: 700px;
     left: 250px;
+}
+
+.mb {
+    /* background-color: aqua; */
+    height: 200px;
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ftit {
+    /* background-color: red; */
+    padding-right: 30px;
+    color: rgb(172, 172, 172);
+    line-height: 200px;
+    height: 200px;
+    align-items: center;
+}
+
+.cbs {
+    position: relative;
+    padding: 10px;
+}
+
+.introchange {
+    display: none;
+    position: relative;
+    left: 30px;
+    padding: 10px;
+    height: 70px;
+    width: 580px;
+    background-color: rgb(237, 244, 237);
+}
+
+.introchange textarea {
+    background-color: white;
+    font-size: 20px;
+    width: 575px;
+    border: 0px;
+    height: 50px;
+    outline: none;
+    resize: none;
+}
+
+.introchange button {
+    outline: none;
+    border: 1px solid rgb(78, 78, 78);
+    background-color: aliceblue;
+    border-radius: 5px;
+    width: 80px;
+}
+
+.introchange button:hover {
+    background-color: bisque;
 }

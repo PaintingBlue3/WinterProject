@@ -226,12 +226,12 @@ a:hover {
 }
 
 #bp {
-    align-items: center;
     height: auto;
     width: auto;
     padding: 10px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
 }
 

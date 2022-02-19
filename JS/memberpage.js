@@ -73,7 +73,6 @@ const moviework = await fetch('http://121.41.120.238:8080/movie/findByMember', {
 const workres = await moviework.json();
 console.log(workres.info)
 
-
 let coverform = new FormData();
 coverform.append('heading', 'view');
 coverform.append('IMDB', 'tt11219254');
