@@ -69,6 +69,7 @@
                 <button id="searchBt"><img id='p2' src="/images/Homepage/3.png"></button>
             </div>
         </div>
+        <span id="type">分类</span>
     </div>
     <div class="focus">
         <ul>
@@ -89,5 +90,8 @@
 <script src="/JS/Homepage/logout.js" type="module"></script>
 <script src="/JS/Homepage/Extension.js" type="module"></script>
 <script src="/JS/Homepage/search.js" type="module"></script>
+<script type="module">
+    const type = document.querySelector('#type'); type.addEventListener('click', async()=>{ window.open('typepage.html') })
+</script>
 
 </html>

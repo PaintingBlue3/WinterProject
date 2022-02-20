@@ -41,7 +41,7 @@ const idget = await fetch('http://121.41.120.238:8080/user/getID', {
     body: idform
 })
 const idgetres = await idget.json();
-console.log(idgetres.info);
+// console.log(idgetres.info);
 
 let introform = new FormData();
 introform.append('id', idgetres.info);
@@ -51,7 +51,8 @@ const introtext = await fetch('http://121.41.120.238:8080/homepage/introduce/get
     body: introform
 })
 const introres = await introtext.json();
-console.log(introres.info)
+console.log('!!')
+console.log(introres)
 intro.innerHTML = introres.info
 
 
@@ -70,7 +71,7 @@ const wlres = await wantlook.json();
 console.log(wlres.information);
 const wl = wlres.information.WMovie.split('');
 const arl = wlres.information.DMovie.split('');
-console.log(wl + '!')
+// console.log(wl + '!')
 
 
 const boxs = document.querySelectorAll('.mb');
@@ -100,7 +101,7 @@ for (let i = 0; i < wl.length; i++) {
             method: 'POST'
         })
         const coverres = await cover.json();
-        console.log(coverres.information[0].picture_1);
+        // console.log(coverres.information[0].picture_1);
 
 
         //插封面进盒子
@@ -139,7 +140,7 @@ for (let i = 0; i < arl.length; i++) {
             }
         }
         let s = arl.slice(flag, [flag1]).join("");
-        console.log(s);
+        // console.log(s);
         //查电影封面
         let coverform = new FormData();
         coverform.append('IMDB', s);
@@ -149,7 +150,7 @@ for (let i = 0; i < arl.length; i++) {
             method: 'POST'
         })
         const coverres = await cover.json();
-        console.log(coverres.information[0].picture_1);
+        // console.log(coverres.information[0].picture_1);
 
 
         //插封面进盒子
@@ -175,28 +176,36 @@ nums[1].innerHTML = '想看' + num1 + '部'
 
 //编辑intro
 const introchange = document.querySelector('.introchange');
+const txt = document.querySelector('#txt');
+let first = introres.info
 intro.addEventListener('click', async() => {
     intro.style.display = 'none'
     introchange.style.display = 'block'
-    introchange.value = introres.info
-    console.log(introchange.value)
+    if (first == '')
+        txt.value = '点击这里编辑你的个人介绍'
+    else
+        txt.value = first
+        // console.log(introchange.value)
 })
 const btn = introchange.querySelector('#btn');
 console.log(btn)
 btn.addEventListener('click', async() => {
+
+    let changeform = new FormData();
+    console.log(txt.value)
+    changeform.append('message', txt.value)
+    const update = await fetch('http://121.41.120.238:8080/homepage/introduce/update', {
+        method: 'POST',
+        body: changeform,
+        headers: formdata
+    })
+    const updtres = await update.json();
+    console.log(txt.value)
     intro.style.display = 'block'
     introchange.style.display = 'none'
-    if (introchange.value == '') {
-
-    } else {
-        let changeform = new FormData();
-        changeform.append('message', introchange.value)
-        const update = await fetch('http://121.41.120.238:8080/homepage/introduce/update', {
-            method: 'POST',
-            body: changeform,
-            headers: formdata
-        })
-        const updtres = await update.json();
-        console.log(updtres)
+    console.log(updtres)
+    if (updtres.info == '上传成功') {
+        intro.innerHTML = txt.value
+        first = txt.value
     }
 })
