@@ -44,8 +44,15 @@ for (let i = 0; i < cmres.information.length; i++) {
 
         //在盒子里写评论
         //在盒子里加点赞键
-        const tp = document.createElement('img');
-        tp.src = '/images/moviepage/tbup-before.png';
+
+        const tp = document.createElement('span');
+
+        function getLocalTime(nS) {
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+        }
+        console.log(getLocalTime(cmres.information[i].time))
+        tp.innerHTML = getLocalTime(cmres.information[i].time)
+        tp.id = 'date'
         cb.appendChild(tp)
 
         // window.open('search.html')
@@ -85,8 +92,14 @@ for (let i = cmres.information.length - 1; i >= 0; i--) {
 
         //在盒子里写评论
         //在盒子里加点赞键
-        const tp = document.createElement('img');
-        tp.src = '/images/moviepage/tbup-before.png';
+        const tp = document.createElement('span');
+        tp.id = 'date'
+
+        function getLocalTime(nS) {
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+        }
+        console.log(cmres.information[i])
+            // tp.innerHTML = getLocalTime(nS)
         cb.appendChild(tp)
     }
 }

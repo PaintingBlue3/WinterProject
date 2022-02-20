@@ -173,7 +173,7 @@ a:hover {
     width: 700px;
     display: grid;
     left: 250px;
-    grid-template-columns: 150px 500px;
+    grid-template-columns: 150px 400px 150px;
 }
 
 .cover {
@@ -184,9 +184,9 @@ a:hover {
 .movietext {
     position: relative;
     left: 15px;
-    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
+    border-right: 1px solid rgb(228, 228, 228);
 }
 
 .movietext span {
@@ -313,11 +313,11 @@ a:hover {
     color: rgb(102, 102, 102);
 }
 
-.cb img {
+#date {
     position: relative;
     float: right;
-    width: 20px;
-    top: -15px;
+    font-size: 10px;
+    top: -17px;
 }
 
 #membs {
@@ -405,40 +405,56 @@ a:hover {
     font-weight: 800;
 }
 
-
-/* #psbox {
-    display: flex;
-} */
-
 .psbox {
     position: relative;
+    top: -10px;
+    margin-left: 35px;
     padding-top: 10px;
-    width: 700px;
-    padding-bottom: 10px;
-    left: 250px;
-    align-items: center;
-    display: flex;
+    width: 150px;
+    height: 200px;
 }
 
 #pointshow {
     position: relative;
-    font-size: 25px;
-    font-weight: bold;
-    color: rgb(84, 86, 82);
-    font-weight: 800;
-}
-
-#psbox span {
-    position: relative;
-    color: rgb(51, 119, 170);
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: rgb(155, 155, 155);
 }
 
 #pointnum {
     position: relative;
-    font-size: 30px;
+    font-size: 35px;
+    color: rgb(73, 73, 73);
     font-weight: bold;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+#per {
+    position: relative;
+    /* background-color: rgb(255, 213, 150); */
+    /* height: 15px; */
+}
+
+.perper span {
+    color: rgb(155, 155, 155);
+}
+
+.perper {
+    top: 10px;
+    position: relative;
+    margin-top: 3px;
+    display: flex;
+}
+
+#person {
+    margin-left: 10px;
     color: rgb(51, 119, 170);
-    font-weight: 800;
+}
+
+#person:hover {
+    background-color: rgb(51, 119, 170);
+    color: aliceblue;
 }
 
 #write {

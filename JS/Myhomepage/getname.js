@@ -14,7 +14,7 @@ const a = await fetch("http://121.41.120.238:8080/user/check", {
     }) //验证登录状态
 
 const res = await a.json();
-console.log(res.info);
+// console.log(res.info);
 let username = res.info;
 
 if (res.info == '你还没有登录！') {
@@ -51,15 +51,9 @@ const introtext = await fetch('http://121.41.120.238:8080/homepage/introduce/get
     body: introform
 })
 const introres = await introtext.json();
-console.log('!!')
-console.log(introres)
+// console.log('!!')
+// console.log(introres)
 intro.innerHTML = introres.info
-
-
-
-
-
-
 
 
 
@@ -68,7 +62,7 @@ const wantlook = await fetch('http://121.41.120.238:8080/user/getDetail', {
     body: introform
 })
 const wlres = await wantlook.json();
-console.log(wlres.information);
+// console.log(wlres.information);
 const wl = wlres.information.WMovie.split('');
 const arl = wlres.information.DMovie.split('');
 // console.log(wl + '!')
@@ -91,7 +85,7 @@ for (let i = 0; i < wl.length; i++) {
             }
         }
         let s = wl.slice(flag, [flag1]).join("");
-        console.log(s);
+        // console.log(s);
         //查电影封面
         let coverform = new FormData();
         coverform.append('IMDB', s);
@@ -101,7 +95,6 @@ for (let i = 0; i < wl.length; i++) {
             method: 'POST'
         })
         const coverres = await cover.json();
-        // console.log(coverres.information[0].picture_1);
 
 
         //插封面进盒子
@@ -127,7 +120,6 @@ nums[0].innerHTML = '想看' + num + '部'
 //看过
 //转单个字符串为n个
 let num1 = 0;
-// let flag = 0;
 flag1 = arl.length;
 for (let i = 0; i < arl.length; i++) {
     if (arl[i] == '/') {
@@ -150,7 +142,6 @@ for (let i = 0; i < arl.length; i++) {
             method: 'POST'
         })
         const coverres = await cover.json();
-        // console.log(coverres.information[0].picture_1);
 
 
         //插封面进盒子
@@ -169,8 +160,7 @@ for (let i = 0; i < arl.length; i++) {
         flag1 = arl.length;
     }
 }
-// const nums = document.querySelectorAll('.number');
-nums[1].innerHTML = '想看' + num1 + '部'
+nums[1].innerHTML = '看过' + num1 + '部'
 
 
 
@@ -188,11 +178,11 @@ intro.addEventListener('click', async() => {
         // console.log(introchange.value)
 })
 const btn = introchange.querySelector('#btn');
-console.log(btn)
+// console.log(btn)
 btn.addEventListener('click', async() => {
 
     let changeform = new FormData();
-    console.log(txt.value)
+    // console.log(txt.value)
     changeform.append('message', txt.value)
     const update = await fetch('http://121.41.120.238:8080/homepage/introduce/update', {
         method: 'POST',
@@ -200,12 +190,81 @@ btn.addEventListener('click', async() => {
         headers: formdata
     })
     const updtres = await update.json();
-    console.log(txt.value)
+    // console.log(txt.value)
     intro.style.display = 'block'
     introchange.style.display = 'none'
-    console.log(updtres)
+        // console.log(updtres)
     if (updtres.info == '上传成功') {
         intro.innerHTML = txt.value
         first = txt.value
     }
 })
+
+
+const essays = document.querySelector('.essays')
+
+//获得留言
+let essayform = new FormData();
+essayform.append('id', idgetres.info)
+const essay = await fetch('http://121.41.120.238:8080/message/msg', {
+    method: 'POST',
+    body: essayform
+})
+const esres = await essay.json();
+console.log(esres.information)
+
+function getLocalTime(nS) {
+    return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+} //转时间
+
+for (let i = 0; i < esres.information.length; i++) {
+    // let cb = document.createElement('div');
+    let line = document.createElement('hr');
+    line.SIZE = '1';
+    // console.log(line);
+    // cb.className = 'cb';
+    line.noshade = "noshade"
+    line.color = "#dddddd"
+    line.size = '1'
+
+    // essays.appendChild(cb)
+    essays.appendChild(line)
+    console.log(esres.information[i].msg); //改成essay，内容
+    console.log(esres.information[i].movie);
+    console.log(esres.information[i].type); //类型
+    console.log(esres.information[i].point); //评分
+    console.log(esres.information[i].time); //时间
+    let ttdate = new FormData();
+    ttdate.append('IMDB', esres.information[i].movie)
+    const search = await fetch('http://121.41.120.238:8080/movie/findByIMDB', {
+        method: 'POST',
+        body: ttdate
+    })
+    const seres = await search.json()
+    console.log(seres.information[0].name) //电影名
+    const box = document.createElement('div'); //big盒子
+    box.className = 'box'
+    const movie = document.createElement('span'); //电影名
+    movie.innerHTML = '《' + seres.information[0].name + '》';
+    movie.id = 'movie'
+    const time = document.createElement('div') //时间
+    time.id = 'time'
+    time.innerHTML = getLocalTime(esres.information[i].time);
+    const point = document.createElement('span'); //评分
+    point.id = 'point'
+    const pointval = document.createElement('span');
+    point.id = 'point'
+    pointval.id = 'pointval'
+    point.innerHTML = '评分：';
+    pointval.innerHTML = esres.information[i].point;
+    point.appendChild(pointval)
+    const essay = document.createElement('div');
+    essay.id = 'essay'
+    essay.innerHTML = esres.information[i].msg;
+    box.appendChild(time)
+    box.appendChild(movie)
+    box.appendChild(point)
+    box.appendChild(essay)
+    essays.appendChild(box)
+
+}

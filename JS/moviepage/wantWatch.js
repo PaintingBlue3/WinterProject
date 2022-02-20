@@ -17,7 +17,7 @@ const test = await fetch('http://121.41.120.238:8080/message/pointOnly', {
     headers: formdata
 })
 const testres = await test.json();
-// console.log(test)
+console.log(test)
 if (testres.info == '好力！') {
     btn1.innerHTML = ' 想 看 ' //修改按钮内部
     const then = await fetch('http://121.41.120.238:8080/message/deletePoint', {
@@ -41,9 +41,11 @@ const test1 = await fetch('http://121.41.120.238:8080/message/pointOnly', {
     headers: formdata
 })
 const testres1 = await test1.json();
+let flag2 = 0;
 if (testres1.info == '好力！') {
     btn2.innerHTML = ' 看 过 ' //修改按钮内部
     btn2f = 1;
+    flag2 = 1;
     const then1 = await fetch('http://121.41.120.238:8080/message/deletePoint', {
         method: 'POST',
         body: wtlform,
@@ -53,10 +55,14 @@ if (testres1.info == '好力！') {
     console.log(thenres1.info)
 } else if (testres1.info == '你已经关注/标注看过这部电影了！') {
     btn2.innerHTML = '你已看过'
+    flag2 = 1;
     btn2f = 2;
 }
 
+
 btn1.addEventListener('click', async() => {
+    if (flag2 == '0')
+        alert("你是不是没有登录捏")
     wtlform.set('type', 'W');
     if (btn1f == 1) {
         wtlform.set('type', 'W');
@@ -77,7 +83,6 @@ btn1.addEventListener('click', async() => {
             headers: formdata
         })
         const nowtlres = await nowanttolook.json();
-        // alert(nowtlres.info);
         btn1f = 1;
         btn1.innerHTML = ' 想 看 '
 
@@ -85,6 +90,8 @@ btn1.addEventListener('click', async() => {
 
 })
 btn2.addEventListener('click', async() => {
+    if (flag2 == '0')
+        alert("你是不是没有登录捏")
     if (btn2f == 1) {
         wtlform.set('type', 'D');
         const wanttolook = await fetch('http://121.41.120.238:8080/message/pointOnly', {

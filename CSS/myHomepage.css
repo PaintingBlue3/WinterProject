@@ -101,6 +101,7 @@ a:hover {
     color: rgb(0, 119, 34);
     font-weight: bold;
     font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .tit:hover {
@@ -112,6 +113,15 @@ a:hover {
 }
 
 .number:hover {
+    background-color: rgb(51, 119, 170);
+    color: white;
+}
+
+.num {
+    color: rgb(51, 119, 170);
+}
+
+.num:hover {
     background-color: rgb(51, 119, 170);
     color: white;
 }
@@ -176,4 +186,43 @@ a:hover {
 
 .introchange button:hover {
     background-color: bisque;
+}
+
+.mycom {
+    position: relative;
+    width: 700px;
+    left: 250px;
+}
+
+.box {
+    margin: 10px;
+}
+
+#time {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: rgb(149, 169, 192);
+}
+
+#essay {
+    padding: 10px;
+}
+
+#movie {
+    color: rgb(51, 119, 170);
+    margin-right: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    font-weight: 200px;
+}
+
+#movie:hover {
+    background-color: rgb(51, 119, 170);
+    color: aliceblue;
+}
+
+#pointval {
+    color: rgb(255, 172, 45);
+    font-weight: bold;
+    font-weight: 200px;
 }
