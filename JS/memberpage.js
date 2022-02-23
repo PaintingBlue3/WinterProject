@@ -64,6 +64,7 @@ mp.appendChild(pic4);
 
 const mms = document.getElementById('mm');
 
+// console.log(msres.information[0].IMDB)
 let workform = new FormData();
 workform.append('MemberIMDB', msres.information[0].IMDB);
 const moviework = await fetch('http://121.41.120.238:8080/movie/findByMember', {
@@ -73,23 +74,59 @@ const moviework = await fetch('http://121.41.120.238:8080/movie/findByMember', {
 const workres = await moviework.json();
 console.log(workres.info)
 
-let coverform = new FormData();
-coverform.append('heading', 'view');
-coverform.append('IMDB', 'tt11219254');
-const cover = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
-    method: 'POST',
-    body: coverform
-})
-const coverres = await cover.json();
-let pic = document.createElement('img');
-pic.src = coverres.information[0].picture_1;
-pic.className = 'mmp'
-pic.width = '150'
-mms.appendChild(pic);
-const mmps = document.querySelectorAll('.mmp');
-for (let i = 0; i < mmps.length; i++) {
+//提交的代码上没写的
+const imdbs = workres.info.split('')
+console.log(imdbs)
+let left = 1;
+let right = 0;
+let num = 0;
+let tts = new Array()
+for (let i = 0; i < imdbs.length; i++) {
+    if (imdbs[i] == ',') {
+        left = i + 1;
+        console.log('left=' + left)
+        for (let f = left; f < imdbs.length; f++) {
+            if (imdbs[f] == ',') {
+                right = f;
+                console.log(right)
+                console.log(imdbs.slice(left, [right]).join(""))
+                tts[num] = imdbs.slice(left, [right]).join("")
+                num++;
+                left = right;
+                break;
+            }
+        }
+        right = imdbs.length;
+
+    }
+}
+console.log(imdbs.slice(left, [right]).join(""))
+tts[num] = imdbs.slice(left, [right]).join("")
+
+
+console.log(tts)
+
+
+
+
+
+for (let i = 0; i < tts.length; i++) { //有改动
+    let coverform = new FormData();
+    coverform.append('heading', 'view');
+    coverform.append('IMDB', tts[i]);
+    const cover = await fetch("http://121.41.120.238:8080/movie/findByIMDB", {
+        method: 'POST',
+        body: coverform
+    })
+    const coverres = await cover.json();
+    let pic = document.createElement('img');
+    pic.src = coverres.information[0].picture_1;
+    pic.className = 'mmp'
+    pic.width = '150'
+    mms.appendChild(pic);
+    const mmps = document.querySelectorAll('.mmp');
     mmps[i].addEventListener('click', async() => {
-        localStorage.setItem('imdb', workres.info) //代修bug
+        localStorage.setItem('imdb', tts[i]) //代修bug
         window.open('moviepage.html')
     })
 }
